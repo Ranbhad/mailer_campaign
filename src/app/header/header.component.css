@@ -1,0 +1,44 @@
+.header {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #f8f8f8;
+  padding: 0.5rem 1rem;
+  font-family: Arial, sans-serif;
+}
+
+.header-nav {
+  display: flex;
+}
+
+.header-list {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.header-list li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.fr-globe {
+  display: flex;
+  align-items: center;
+}
+
+.globe-icon {
+  margin-left: 0.25rem;
+}
+
+.account {
+  display: flex;
+  align-items: center;
+}
+
+.account-icon {
+  margin-right: 0.25rem;
+}

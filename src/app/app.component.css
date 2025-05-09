@@ -1,0 +1,14 @@
+/* Set font to Arial for the whole app component */
+:host {
+  font-family: Arial, sans-serif;
+}
+
+/* Explicitly add background color for primary mat-raised-button */
+button[mat-raised-button][color="primary"] {
+  background-color: #1976d2;
+  color: white;
+}
+
+button[mat-raised-button][color="primary"]:hover {
+  background-color: #1565c0;
+}

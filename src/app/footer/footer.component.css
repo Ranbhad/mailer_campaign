@@ -1,0 +1,41 @@
+.footer {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(52, 50, 50);
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  margin: 0 1rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 0.5rem 0;
+}
+
+.footer-section a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+.social-icons a {
+  /* font-size: 1.5rem; */
+  margin-right: 0.5rem;
+  text-decoration: none;
+}
+
+/* Added specific styles for canada-post and connect-with-us */
+.canada-post {
+  font-weight: bold;
+  /* font-size: 1.2rem; */
+  color: white;
+  padding: 0.5rem 0;
+}

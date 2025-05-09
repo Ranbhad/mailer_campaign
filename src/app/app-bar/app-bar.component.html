@@ -1,0 +1,33 @@
+<nav class="app-bar">
+  <ul class="app-bar-list">
+    <li class="icon">
+      <a href="#">🐦</a>
+    </li>
+    <li><a href="#">Home</a></li>
+    <li class="dropdown">
+      <a href="#">Shipping ▼</a>
+      <ul class="dropdown-content">
+        <li *ngFor="let option of shippingOptions"><a href="#">{{ option }}</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Returns</a></li>
+    <li class="dropdown">
+      <a href="#">Mail Campaigns ▼</a>
+      <ul class="dropdown-content">
+        <li *ngFor="let option of mailCampaignsOptions"><a href="#">{{ option }}</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Post Service ▼</a>
+      <ul class="dropdown-content">
+        <li *ngFor="let option of postServiceOptions"><a href="#">{{ option }}</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Order History ▼</a>
+      <ul class="dropdown-content">
+        <li *ngFor="let option of orderHistoryOptions"><a href="#">{{ option }}</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
