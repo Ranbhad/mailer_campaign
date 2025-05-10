@@ -12,3 +12,26 @@ button[mat-raised-button][color="primary"] {
 button[mat-raised-button][color="primary"]:hover {
   background-color: #1565c0;
 }
+
+/* Structure */
+.example-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
+
+.example-header {
+  min-height: 64px;
+  padding: 8px 24px 0;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 500px;
+}
+

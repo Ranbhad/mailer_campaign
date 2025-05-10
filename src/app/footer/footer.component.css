@@ -26,16 +26,28 @@
   font-weight: 500;
 }
 
-.social-icons a {
-  /* font-size: 1.5rem; */
+/* .social-icons a {
+  font-size: 1.5rem;
   margin-right: 0.5rem;
   text-decoration: none;
-}
+} */
 
 /* Added specific styles for canada-post and connect-with-us */
 .canada-post {
   font-weight: bold;
-  /* font-size: 1.2rem; */
   color: white;
   padding: 0.5rem 0;
+}
+
+.canada-post a {
+  display: block;
+  margin: 0.25rem 0;
+  padding: 0.5rem 0;
+}
+
+.social-connect {
+  font-weight: bold;
+  color: white;
+  padding: 0.5rem 0;
+  margin-right: 0.5rem;
 }

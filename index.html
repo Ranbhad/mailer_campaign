@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mailerCampaignApp">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mailer Campaign - AngularJS</title>
+  <link rel="stylesheet" href="src/app/app-table-styles.css" />
+  <link rel="stylesheet" href="src/app/app-bar/app-bar.component.css" />
+  <link rel="stylesheet" href="src/app/footer/footer.component.css" />
+  <style>
+    /* Additional styles if needed */
+    main {
+      padding: 1rem;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+      text-align: left;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+    button {
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    button:hover {
+      background-color: #1565c0;
+    }
+    label {
+      font-weight: bold;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+  <script src="app.js"></script>
+</head>
+<body ng-controller="MainController as mainCtrl">
+
+  <app-header></app-header>
+  <app-app-bar></app-app-bar>
+
+  <main>
+    <section>
+      <h2>Manage ride alongs</h2>
+      <button ng-click="mainCtrl.createNewCampaign()">Create New Campaign</button>
+    </section>
+
+    <section>
+      <label for="sortBy" style="width: 300px; display: block;">Sort By:</label>
+      <select id="sortBy" name="sortBy" ng-model="mainCtrl.sortBy" ng-options="option.value as option.label for option in mainCtrl.sortOptions">
+      </select>
+
+      <br/>
+
+      <label for="viewFilter" style="margin-top: 1rem; display: block;">View:</label>
+      <select id="viewFilter" name="viewFilter" style="width: 300px; display: block;" ng-model="mainCtrl.viewFilter" ng-options="option.value as option.label for option in mainCtrl.viewOptions">
+      </select>
+
+      <table cellspacing="0" cellpadding="5">
+        <thead>
+          <tr>
+            <th>Campaign Id</th>
+            <th>Campaign Name</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="campaign in mainCtrl.campaigns | filter:mainCtrl.viewFilterFn | orderBy:mainCtrl.sortBy">
+            <td>{{campaign.id}}</td>
+            <td>{{campaign.name}}</td>
+            <td>{{campaign.startDate}}</td>
+            <td>{{campaign.endDate}}</td>
+            <td>{{campaign.status}}</td>
+            <td><!-- Actions can be added here --></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <app-footer></app-footer>
+
+</body>
+</html>
