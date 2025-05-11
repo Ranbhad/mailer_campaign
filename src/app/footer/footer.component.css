@@ -5,6 +5,7 @@
   padding: 1rem;
   font-family: Arial, sans-serif;
   flex-wrap: wrap;
+  font-size: small;
 }
 
 .footer-section {
@@ -23,7 +24,7 @@
 .footer-section a {
   text-decoration: none;
   color: white;
-  font-weight: 500;
+  font-weight: 300;
 }
 
 /* .social-icons a {
@@ -36,18 +37,18 @@
 .canada-post {
   font-weight: bold;
   color: white;
-  padding: 0.5rem 0;
+  padding: 0.25rem 0;
 }
 
 .canada-post a {
   display: block;
   margin: 0.25rem 0;
-  padding: 0.5rem 0;
+  padding: 0.25rem 0;
 }
 
 .social-connect {
   font-weight: bold;
   color: white;
-  padding: 0.5rem 0;
-  margin-right: 0.5rem;
+  padding: 0.25rem 0;
+  margin-right: 0.25rem;
 }

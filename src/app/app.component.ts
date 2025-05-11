@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { AppBarComponent } from './app-bar/app-bar.component';
 import { FooterComponent } from './footer/footer.component';
@@ -10,10 +10,40 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { NewCampaignComponent } from './new-campaign.component';
+import { ViewCampaignComponent } from './view-campaign.component';
+
+import { CampaignListComponent } from './campaign-list.component';
+import { DropdownModule } from 'primeng/dropdown';
+
+const routes: Routes = [
+  { path: '', component: CampaignListComponent },
+  { path: 'new-campaign', component: NewCampaignComponent },
+  { path: 'view-campaign', component: ViewCampaignComponent }
+];
+
+interface City {
+  name: string;
+  code: string;
+}
 
 @Component({
   selector: 'app-root',
-  imports: [ HeaderComponent, AppBarComponent, FooterComponent, MatButtonModule, MatSelectModule, MatFormFieldModule, MatInputModule, FormsModule, CommonModule, MatTableModule],
+  standalone: true,
+  imports: [
+    HeaderComponent,
+    AppBarComponent,
+    FooterComponent,
+    MatButtonModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    CommonModule,
+    MatTableModule,
+    RouterModule,
+    DropdownModule
+  ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
@@ -28,13 +58,19 @@ export class AppComponent {
   }
   title = 'mailer_campaign';
 
-  foods = [
-    { value: 'steak-0', viewValue: 'Steak' },
-    { value: 'pizza-1', viewValue: 'Pizza' },
-    { value: 'tacos-2', viewValue: 'Tacos' }
-  ];
+  cities: City[] | undefined;
 
-  selectedFood: string | undefined;
+  selectedCity: City | undefined;
+
+  ngOnInit() {
+    this.cities = [
+      { name: 'New York', code: 'NY' },
+      { name: 'Rome', code: 'RM' },
+      { name: 'London', code: 'LDN' },
+      { name: 'Istanbul', code: 'IST' },
+      { name: 'Paris', code: 'PRS' }
+    ];
+  }
 }
 
 export interface Campaign {
